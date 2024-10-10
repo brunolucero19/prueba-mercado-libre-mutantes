@@ -1,6 +1,5 @@
 package com.example.parcialBrunoLucero50073;
 
-import com.example.parcialBrunoLucero50073.entities.Humano;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

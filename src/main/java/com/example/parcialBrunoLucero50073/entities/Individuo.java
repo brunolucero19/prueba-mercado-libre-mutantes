@@ -4,24 +4,23 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "humano")
+@Table(name = "individuo")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
 @ToString
-public class Humano implements Serializable {
+public class Individuo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dna", unique = true)
-    private String[] dna;
+    @Column(name = "dna")
+    private String dna;
 
-
+    @Column(name = "isMutant")
+    private boolean isMutant;
 }
