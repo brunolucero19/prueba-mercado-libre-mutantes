@@ -19,6 +19,14 @@ public class IndividuoController {
     }
     @PostMapping("/")
     public ResponseEntity<String> isMutant(@RequestBody DnaRequest dnaRequest){
+
+        try{
+            individuoService.validateDNASequence(dnaRequest.getDna());
+
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+
         try{
             boolean isMutant = individuoService.isMutant(dnaRequest.getDna());
             if (isMutant){
