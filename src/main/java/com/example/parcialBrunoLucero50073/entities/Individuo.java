@@ -23,4 +23,6 @@ public class Individuo implements Serializable {
 
     @Column(name = "isMutant")
     private boolean isMutant;
+
+
 }

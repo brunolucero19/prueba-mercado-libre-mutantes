@@ -18,7 +18,7 @@ public class StatsService {
         long countHuman = individuoRepository.countNoMutant();
         double ratio = 0;
         if(countHuman != 0){
-            ratio = (double) countMutant / countHuman;
+            ratio = Math.round(((double) countMutant / countHuman) * 100.0) / 100.0;
         }
         return
                 Stats.builder().countMutant(countMutant).countHuman(countHuman).ratio(ratio).build();

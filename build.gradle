@@ -26,28 +26,33 @@ repositories {
 dependencies {
 	//JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
 	//Spring Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	//Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	//DevTools
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 	//H2
 	runtimeOnly 'com.h2database:h2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 	//OPEN API
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
 
-tasks.jar {
-	enabled = true
-}
 
 bootJar {
 	enabled = true

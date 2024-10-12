@@ -18,7 +18,7 @@ public class IndividuoService {
 
 
     @Transactional
-    public boolean isMutant(String[] dna) throws Exception{
+    public boolean isMutant(String[] dna) {
 
         String dnaSequence = String.join(",", dna);
 
