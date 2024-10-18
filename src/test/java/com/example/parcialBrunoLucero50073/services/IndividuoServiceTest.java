@@ -4,8 +4,6 @@ package com.example.parcialBrunoLucero50073.services;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -17,7 +15,7 @@ public class IndividuoServiceTest {
 
     //Test para probar secuencias horizontales
     @Test
-    public void testHorizontal() {
+    public void testHorizontal() throws Exception {
         String[] dna = {
                 "AAAAGA",
                 "CAGTGC",
@@ -31,7 +29,7 @@ public class IndividuoServiceTest {
 
     //Test para probar secuencias verticales
     @Test
-    public void testVertical() {
+    public void testVertical() throws Exception {
         String[] dna = {
                 "ATGCGA",
                 "AAGCGC",
@@ -45,7 +43,7 @@ public class IndividuoServiceTest {
 
     //Test para probar diagonales descendentes
     @Test
-    public void testDescendingDiagonal() {
+    public void testDescendingDiagonal() throws Exception {
         String[] dna = {
                 "ATGCGA",
                 "CATTGC",
@@ -59,7 +57,7 @@ public class IndividuoServiceTest {
 
     //Test para probar diagonales ascendentes
     @Test
-    public void testAscendingDiagonal() {
+    public void testAscendingDiagonal() throws Exception {
         String[] dna = {
                 "ATGCGA",
                 "CATTAC",
@@ -73,7 +71,7 @@ public class IndividuoServiceTest {
 
     //Test para probar que no es mutante
     @Test
-    public void testNoMutant()  {
+    public void testNoMutant() throws Exception  {
         String[] dna = {
                 "ATGCGA",
                 "CGTTAC",
@@ -87,7 +85,7 @@ public class IndividuoServiceTest {
 
     //Pruebas unitarias brindadas por el profesor
     @Test
-    public void test1(){
+    public void test1() throws Exception{
         String[] dna = {
                 "AAAA",
                 "CCCC",
@@ -98,7 +96,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() throws Exception{
         String[] dna = {
                 "TGAC",
                 "AGCC",
@@ -109,7 +107,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test3(){
+    public void test3() throws Exception{
         String[] dna = {
                 "AAAT",
                 "AACC",
@@ -120,7 +118,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test4(){
+    public void test4() throws Exception{
         String[] dna = {
                 "TGAC",
                 "ATCC",
@@ -131,7 +129,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test5(){
+    public void test5() throws Exception{
         String[] dna = {
                 "AAAA",
                 "AAAA",
@@ -142,7 +140,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test6(){
+    public void test6() throws Exception{
         String[] dna = {
                 "TCGGGTGAT",
                 "TGATCCTTT",
@@ -158,7 +156,7 @@ public class IndividuoServiceTest {
     }
 
     @Test
-    public void test7(){
+    public void test7() throws Exception{
         String[] dna = {
                 "TTTTTTTTT",
                 "TTTTTTTTT",

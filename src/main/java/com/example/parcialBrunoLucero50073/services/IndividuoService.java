@@ -16,9 +16,15 @@ public class IndividuoService {
     @Autowired
     private IndividuoRepository individuoRepository;
 
+    public IndividuoService(IndividuoRepository individuoRepository) {
+        this.individuoRepository = individuoRepository;
+    }
+
 
     @Transactional
-    public boolean isMutant(String[] dna) {
+    public boolean isMutant(String[] dna) throws Exception {
+
+        validateDNASequence(dna);
 
         String dnaSequence = String.join(",", dna);
 
