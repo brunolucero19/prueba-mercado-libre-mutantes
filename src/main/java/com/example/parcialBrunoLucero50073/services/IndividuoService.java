@@ -106,7 +106,7 @@ public class IndividuoService {
             throw new Exception("La secuencia de ADN no puede estar vacía.");
         }
 
-        //Validar que sea una matriz de NxN
+        // Validar que sea una matriz de NxN y que no contenga null
         for(int i=0; i<n; i++){
 
             if(dna[i] == null){

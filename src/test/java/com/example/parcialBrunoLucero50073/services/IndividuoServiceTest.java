@@ -171,5 +171,63 @@ public class IndividuoServiceTest {
         };
         assertTrue(individuoService.isMutant(dna));
     }
+
+    @Test
+    public void testArrayVacio() {
+        String[] dna = {};
+        Exception exception = assertThrows(Exception.class, () -> {
+            individuoService.isMutant(dna);
+        });
+        assertEquals("La secuencia de ADN no puede estar vacía.", exception.getMessage());
+    }
+
+    @Test
+    public void testArrayNull() {
+        String[] dna = null;
+        Exception exception = assertThrows(Exception.class, () -> {
+            individuoService.isMutant(dna);
+        });
+        assertEquals("La secuencia no puede ser null.", exception.getMessage());
+    }
+
+    @Test
+    public void testArrayContainsNull() {
+        String[] dna = {
+                "AAA",
+                null,
+                "CCC"
+        };
+        Exception exception = assertThrows(Exception.class, () -> {
+            individuoService.isMutant(dna);
+        });
+        assertEquals("La secuencia de ADN no puede contener null dentro del array.", exception.getMessage());
+    }
+
+    @Test
+    public void testArrayNxM() {
+        String[] dna = {
+                "AAA",
+                "TTT",
+                "GGG",
+                "GGG",
+        };
+        Exception exception = assertThrows(Exception.class, () -> {
+            individuoService.isMutant(dna);
+        });
+        assertEquals("La secuencia de ADN debe tener la misma cantidad de filas y columnas.", exception.getMessage());
+    }
+
+    @Test
+    public void testArrayInvalidadCharacters() {
+        String[] dna = {
+                "BAA",
+                "TTT",
+                "GGG",
+        };
+        Exception exception = assertThrows(Exception.class, () -> {
+            individuoService.isMutant(dna);
+        });
+        assertEquals("La secuencia de ADN tiene caracteres inválidos. Sólo debe tener A, T, C ó G.", exception.getMessage());
+    }
 }
 
