@@ -22,7 +22,6 @@ public class StatsController {
 
     @GetMapping("")
     public ResponseEntity<Stats> getStats(){
-
         Stats stats = statsService.getStats();
         return ResponseEntity.status(HttpStatus.OK).body(stats);
 
